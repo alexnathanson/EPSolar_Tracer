@@ -1,7 +1,7 @@
 # EPSolar_Tracer
 
 ## Definitions
-Modbus <br>
+Modbus
 * https://en.wikipedia.org/wiki/Modbus
 
 RS485
