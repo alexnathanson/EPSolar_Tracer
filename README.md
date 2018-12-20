@@ -9,6 +9,8 @@ Full Duplex
 
 Half Duplex
 
+## Resources & Prior Work
+https://github.com/kasbert/epsolar-tracer
 
 ## Links
 Tracer charge controller
