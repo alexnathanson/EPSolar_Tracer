@@ -1,6 +1,6 @@
 import serial
 
-ser = serial.Serial('/dev/ttyAMA0',115200)
+ser = serial.Serial('/dev/ttyACM0',115200)
 s = [0]
 while True:
 	read_serial=ser.readline()
