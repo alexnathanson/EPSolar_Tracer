@@ -16,3 +16,9 @@ https://www.epsolarpv.com/product/3.html
 
 Tracer Modbus Protocol
 http://www.solar-elektro.cz/data/dokumenty/1733_modbus_protocol.pdf
+
+## install steps
+* sudo apt-get install git
+* sudo apt-get install python-pip
+* pip install pymodbus
+* pip install serial
