@@ -1,10 +1,10 @@
 import sys
-import blob
+import glob
 import serial
 import os
 import subprocess
 
-ports=blob.glob('/dev/tty[A-Za-z]*')
+ports=glob.glob('/dev/tty[A-Za-z]*')
 
 result=[]
 
@@ -17,7 +17,7 @@ for port in ports:
 		pass
 
 print('List system ports')
-print(results)
+print(result)
 
 try:
 	serial_port = serial.Serial('/dev/ttyXRUSB0',115200)
