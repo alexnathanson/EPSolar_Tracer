@@ -9,6 +9,7 @@ instrument = minimalmodbus.Instrument('COM3', 1)
 
 while True:
     # Register number (in decimals), number of decimals, function code
-    temperature = instrument.read_register(12545, 2,4)
-    print temperature
+    # the first Tracer register is 0x3100 (12544 in decimal)
+    batVoltage = instrument.read_register(12548, 2,4)
+    print batVoltage
     time.sleep(1)

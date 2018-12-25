@@ -1,3 +1,5 @@
+# based on the example from http://www.solarpoweredhome.co.uk/
+
 from pymodbus.client.sync import ModbusSerialClient as ModbusClient
  
 client = ModbusClient(method = 'rtu', port = 'COM3', baudrate = 115200)
