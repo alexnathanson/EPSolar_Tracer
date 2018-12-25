@@ -17,7 +17,7 @@ This uses a USB to RS485 cable.
 ### Via GPIO
 This method uses a Max485 and a 5v to 3.3v level shifter.
 
-## Arduino Uno + Max485
+## Arduino Uno & Max485
 This works well. It's a pretty easy implementation. I'm using software serial to free up the USB port for serial communication with a computer or whatever you want. In the future I may build it out as a library.
 
 You can monitor the serial port from the Arduino IDE or serialTest.py (serialTest.py is a simple alternative if you can't get the Tracer to communicate directly with the Raspberry Pi)
