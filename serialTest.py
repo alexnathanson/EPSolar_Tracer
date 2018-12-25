@@ -1,6 +1,8 @@
+# read from Arduino connection over USB
+
 import serial
 
-ser = serial.Serial('/dev/ttyACM0',115200)
+ser = serial.Serial('COM5',115200)
 s = [0]
 while True:
 	read_serial=ser.readline()
