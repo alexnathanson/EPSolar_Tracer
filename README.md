@@ -15,7 +15,7 @@ I do not have a successful standalone Raspberry Pi 3 B+ version yet. There are a
 This works well. It's a pretty easy implementation. I'm using software serial to free up the USB port for serial communication with a computer or whatever you want. In the future I may build it out as a library.
 
 ## Resources & Prior Work
-https://github.com/kasbert/epsolar-tracer
+https://github.com/kasbert/epsolar-tracer <br>
 http://www.solarpoweredhome.co.uk/
 
 ## Links
