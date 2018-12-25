@@ -16,6 +16,8 @@ This works well. It's a pretty easy implementation. I'm using software serial to
 
 You can monitor the serial port from the Arduino IDE or serialTest.py (serialTest.py is a simple alternative if you can't get the Tracer to communicate directly with the Raspberry Pi)
 
+This uses the Modbus Master library. https://github.com/4-20ma/ModbusMaster
+
 ## Win 10 PC
 This is the simplest implementation. Uses the manufacturer recommended RS485 to USB cable (Model: CC-USB-RS485-150U).
 
