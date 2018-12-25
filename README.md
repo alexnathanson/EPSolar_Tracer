@@ -14,7 +14,7 @@ I do not have a successful standalone Raspberry Pi 3 B+ version yet, but am cont
 ## Arduino Uno + Max485
 This works well. It's a pretty easy implementation. I'm using software serial to free up the USB port for serial communication with a computer or whatever you want. In the future I may build it out as a library.
 
-You can monitor the serial port from the Arduino IDE or serialTest.py
+You can monitor the serial port from the Arduino IDE or serialTest.py (serialTest.py is a simple alternative if you can't get the Tracer to communicate directly with the Raspberry Pi)
 
 ## Win 10 PC
 This is the simplest implementation. Uses a RS485 to USB cable. In the 
