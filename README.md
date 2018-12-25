@@ -17,7 +17,11 @@ This works well. It's a pretty easy implementation. I'm using software serial to
 You can monitor the serial port from the Arduino IDE or serialTest.py (serialTest.py is a simple alternative if you can't get the Tracer to communicate directly with the Raspberry Pi)
 
 ## Win 10 PC
-This is the simplest implementation. Uses a RS485 to USB cable. In the 
+This is the simplest implementation. Uses the manufacturer recommended RS485 to USB cable (Model: CC-USB-RS485-150U).
+
+In device manager right-click on the port and select properties. In the port settings tab make sure RS-485 is checked and the BPS is set to 115200. The other settings I used were databits = 8, parity= None, stopbits = 1
+
+Both minimalmodbus and pymodbus libraries work well with my PC.
 
 ## Resources & Prior Work
 https://github.com/kasbert/epsolar-tracer <br>
