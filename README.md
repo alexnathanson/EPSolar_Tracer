@@ -5,11 +5,17 @@ This has been tested with model 3210A, but should work with any EP Solar Tracer 
 ## Raspberry Pi Mobel 3 B+
 I do not have a successful standalone Raspberry Pi 3 B+ version yet, but am continueing to work on it. There are a few examples of people who have realized this project in the past, but I haven't seen anyone specifically succeed with this specific Pi using Raspian Stretch... You can easily connected the Pi to an Arduino via a USB cable.
 
-### install steps
+### Via USB port
+This uses a USB to RS485 cable.
+<!--
+#### install steps
 * sudo apt-get install git
 * sudo apt-get install python-pip
 * pip install pymodbus
 * pip install serial
+-->
+### Via GPIO
+This method uses a Max485 and a 5v to 3.3v level shifter.
 
 ## Arduino Uno + Max485
 This works well. It's a pretty easy implementation. I'm using software serial to free up the USB port for serial communication with a computer or whatever you want. In the future I may build it out as a library.
