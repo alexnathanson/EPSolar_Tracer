@@ -8,7 +8,8 @@ modbusSlaveID = 1
 # can be 'ascii' or 'rtu'
 modbusFormat = 'rtu'
 
-#in decimal 12544 or in hexadecimal its 0x3100 (use decimal)
+# USE DECIMAL
+#Tracer registers start at 12544 (in decimal) i.e. 0x3100 (in hexadecimal)
 registerToRead = 12548
 
 # 3 is for Holding Registers, 4 is for Input Registers
@@ -25,4 +26,4 @@ device.serial.parity = serial.PARITY_NONE
 device.serial.stopbits = 1
 device.serial.timeout = 2   # seconds
 
-print device.read_register(registerToRead, 2, functioncode=functionCode)
+print (device.read_register(registerToRead, 2, functioncode=functionCode)/100.0)
