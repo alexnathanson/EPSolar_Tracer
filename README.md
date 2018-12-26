@@ -40,7 +40,7 @@ RJ45 green => a
 
 #### Troubleshooting
 If you're trying to use the EXAR driver set the port to the right permissions.
-* Sudo chmod 777 /dev/PORTNAME
+* sudo chmod 777 /dev/ttyXRUSB0
 
 ### Via GPIO
 This method uses a Max485 and a 5v to 3.3v level shifter. I have not realized this version, but it should be doable if you need to free up USB ports for whatever reason.
