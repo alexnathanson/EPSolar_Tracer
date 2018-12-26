@@ -43,7 +43,7 @@ If you're trying to use the EXAR driver set the port to the right permissions.
 Sudo chmod 777 /dev/PORTNAME
 
 ### Via GPIO
-This method uses a Max485 and a 5v to 3.3v level shifter. I have not realized this version, but it should be doable if you need to free up USB port for whatever reason.
+This method uses a Max485 and a 5v to 3.3v level shifter. I have not realized this version, but it should be doable if you need to free up USB ports for whatever reason.
 
 Some GPIO resources
 * https://learn.sparkfun.com/tutorials/txb0104-level-shifter-hookup-guide?_ga=2.223672476.663927220.1545672234-707983221.1543353897
