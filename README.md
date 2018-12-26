@@ -11,7 +11,7 @@ Because the rs485 converter to USB port implementation for the Raspberry Pi reli
 ### Via USB port
 This works with a USB to RS485 converter (ch340T chip model).
 
-I was not able to get this to work with the manufacturer's recommended cable (Model: CC-USB-RS485-150U) because the EXAR USB drivers would not work with this version of the Raspberry Pi. A number of other people have successfullly used that cable and EXAR drivers with earlier Raspberry Pi models.
+I was not able to get this to work with the manufacturer's recommended cable (Model: CC-USB-RS485-150U) because the EXAR USB drivers would not work with this version of the Raspberry Pi. A number of other people have successfullly used that cable and EXAR drivers with earlier Raspberry Pi models. (EXAR drivers: https://www.exar.com/design-tools/software-drivers)
 
 The pymodbus library is better to use because it has more options, but minimalmodbus works too.
 
@@ -22,13 +22,15 @@ RJ45 green => a
 #### ch340T specs
 * https://hackaday.com/tag/ch340/
 * http://fobit.blogspot.com/2014/11/ch340g-in-eagle.html
-<!--
+
 #### install steps
+* sudo apt-get update
+* sudo apt-get dist-upgrade
 * sudo apt-get install git
 * sudo apt-get install python-pip
-* pip install pymodbus
+* pip install pymodbus 
 * pip install serial
--->
+
 
 #### Misc. Linux port identification commands
 * Lsusb
@@ -39,7 +41,7 @@ RJ45 green => a
 * sudo cat /proc/tty/driver/serial
 
 #### Troubleshooting
-Set the port to the right permissions.
+If you're trying to use the EXAR driver set the port to the right permissions.
 Sudo chmod 777 /dev/PORTNAME
 
 ### Via GPIO
@@ -51,6 +53,7 @@ Some GPIO resources
 * https://www.instructables.com/id/How-to-Use-Modbus-With-Raspberry-Pi/
 * https://doc.homegear.eu/data/homegear-homematicwired/configuration.html#config-rs485-serial
 * https://www.raspberrypi-spy.co.uk/2018/09/using-a-level-shifter-with-the-raspberry-pi-gpio/
+* https://www.raspberrypi.org/documentation/configuration/uart.md
 
 ## Arduino Uno & Max485
 This works well. It's a pretty easy implementation. I'm using software serial to free up the USB port for serial communication with a computer or whatever you want. In the future I may build it out as a library.
