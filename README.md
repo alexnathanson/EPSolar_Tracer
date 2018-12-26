@@ -4,6 +4,8 @@ This has been tested with Tracer model 3210A, but should work with any EP Solar 
 
 There are 2 different Modbus libraries for Python that work well, pymodbus and minimalmodbus. libmodbus is a library for C that others have used with Raspberry Pis.
 
+Because the rs485 converter to USB port implementation for the Raspberry Pi relies on version specific drivers, the Arduino implementation might be more future proof.
+
 ## Raspberry Pi Mobel 3 B+
 
 ### Via USB port
