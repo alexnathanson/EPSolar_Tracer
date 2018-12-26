@@ -9,9 +9,11 @@ Because the rs485 converter to USB port implementation for the Raspberry Pi reli
 ## Raspberry Pi Mobel 3 B+
 
 ### Via USB port
-This uses a USB to RS485 converter. This does not work with the manufacturer's recommended cable (Model: CC-USB-RS485-150U) but I did get it to work easily with a ch340T chip model.
+This works with a USB to RS485 converter (ch340T chip model).
 
-### wiring
+I was not able to get this to work with the manufacturer's recommended cable (Model: CC-USB-RS485-150U) because the EXAR USB drivers would not work with this version of the Raspberry Pi. A number of other people have successfullly used that cable and EXAR drivers with earlier Raspberry Pi models.
+
+#### wiring
 RJ45 blue => b
 RJ45 green => a
 
@@ -25,6 +27,10 @@ RJ45 green => a
 * pip install pymodbus
 * pip install serial
 -->
+
+#### Misc. Linux port identification commands
+
+
 ### Via GPIO
 This method uses a Max485 and a 5v to 3.3v level shifter. I have not realized this version, but it should be doable if you need to free up USB port for whatever reason.
 
@@ -53,7 +59,8 @@ Both minimalmodbus and pymodbus libraries work well with my PC.
 
 ## Addition Resources & Prior Work
 https://github.com/kasbert/epsolar-tracer <br>
-http://www.solarpoweredhome.co.uk/
+http://www.solarpoweredhome.co.uk/ <br>
+https://medium.com/@jcrbcn/installing-the-exar-usb-driver-on-the-raspberrypi-for-teknic-sc-hub-39de533f0502
 
 ## Links
 Tracer charge controller
