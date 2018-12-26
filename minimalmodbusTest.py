@@ -5,7 +5,7 @@ import time
 minimalmodbus.BAUDRATE = 115200
 
 # port name, slave address (in decimal)
-instrument = minimalmodbus.Instrument('COM3', 1)
+instrument = minimalmodbus.Instrument('COM6', 1)
 
 while True:
     # Register number (in decimals), number of decimals, function code
