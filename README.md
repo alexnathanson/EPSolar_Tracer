@@ -13,6 +13,8 @@ This works with a USB to RS485 converter (ch340T chip model).
 
 I was not able to get this to work with the manufacturer's recommended cable (Model: CC-USB-RS485-150U) because the EXAR USB drivers would not work with this version of the Raspberry Pi. A number of other people have successfullly used that cable and EXAR drivers with earlier Raspberry Pi models.
 
+The pymodbus library is better to use because it has more options, but minimalmodbus works too.
+
 #### wiring
 RJ45 blue => b <br>
 RJ45 green => a
