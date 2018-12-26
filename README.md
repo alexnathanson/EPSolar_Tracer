@@ -2,7 +2,7 @@
 This repo has a few different implementations and tools for communicating with EP Solar Tracer charge controllers.
 This has been tested with Tracer model 3210A, but should work with any EP Solar Tracer model that uses Modbus RS485 and MT50 displays.
 
-There are 2 different Modbus libraries for Python that work well, pymodbus and minimalmodbus. libmodbus is a library for C that others have used with Raspberry Pis.
+There are 2 different Modbus libraries for Python that work well, pymodbus and minimalmodbus. Pymodbus is better to use because it has more options. libmodbus is a library for C that others have used with Raspberry Pis.
 
 Because the rs485 converter to USB port implementation for the Raspberry Pi relies on version specific drivers, the Arduino implementation might be more future proof.
 
@@ -12,8 +12,6 @@ Because the rs485 converter to USB port implementation for the Raspberry Pi reli
 This works with a USB to RS485 converter (ch340T chip model).
 
 I was not able to get this to work with the manufacturer's recommended cable (Model: CC-USB-RS485-150U) because the EXAR USB drivers would not work with this version of the Raspberry Pi. A number of other people have successfullly used that cable and EXAR drivers with earlier Raspberry Pi models. (EXAR drivers: https://www.exar.com/design-tools/software-drivers)
-
-The pymodbus library is better to use because it has more options, but minimalmodbus works too.
 
 #### wiring
 RJ45 blue => b <br>
