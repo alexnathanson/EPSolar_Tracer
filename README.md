@@ -49,7 +49,7 @@ In device manager right-click on the port and select properties. In the port set
 
 Both minimalmodbus and pymodbus libraries work well with my PC.
 
-## Resources & Prior Work
+## Addition Resources & Prior Work
 https://github.com/kasbert/epsolar-tracer <br>
 http://www.solarpoweredhome.co.uk/
 
