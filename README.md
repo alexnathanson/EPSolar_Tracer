@@ -1,11 +1,17 @@
 # EPSolar_Tracer
 This repo has a few different implementations and tools for communicating with EP Solar Tracer charge controllers.
-This has been tested with model 3210A, but should work with any EP Solar Tracer model that uses Modbus RS485 and MT50 displays
+This has been tested with Tracer model 3210A, but should work with any EP Solar Tracer model that uses Modbus RS485 and MT50 displays.
+
+There are 2 different Modbus libraries for Python that work well, pymodbus and minimalmodbus. libmodbus is a library for C that others have used with Raspberry Pis.
 
 ## Raspberry Pi Mobel 3 B+
 
 ### Via USB port
 This uses a USB to RS485 converter. This does not work with the manufacturer's recommended cable (Model: CC-USB-RS485-150U) but I did get it to work easily with a ch340T chip model.
+
+### wiring
+RJ45 blue => b
+RJ45 green => a
 
 #### ch340T specs
 * https://hackaday.com/tag/ch340/
