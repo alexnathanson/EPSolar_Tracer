@@ -43,7 +43,7 @@ You can monitor the serial port from the Arduino IDE or serialTest.py (serialTes
 This uses the Modbus Master library. https://github.com/4-20ma/ModbusMaster
 
 ## Win 10 PC
-This is the simplest implementation. Uses the manufacturer recommended RS485 to USB cable (Model: CC-USB-RS485-150U).
+This is the simplest implementation. It uses the manufacturer recommended RS485 to USB cable (Model: CC-USB-RS485-150U).
 
 In device manager right-click on the port and select properties. In the port settings tab make sure RS-485 is checked and the BPS is set to 115200. The other settings I used were databits = 8, parity= None, stopbits = 1
 
