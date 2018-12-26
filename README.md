@@ -36,7 +36,7 @@ Some GPIO resources
 ## Arduino Uno & Max485
 This works well. It's a pretty easy implementation. I'm using software serial to free up the USB port for serial communication with a computer or whatever you want. In the future I may build it out as a library.
 
-![arduino max485](https://github.com/alexnathanson/EPSolar_Tracer/blob/master/images/arduino_Max485_wiring.jpg | width="400")
+![arduino max485](https://github.com/alexnathanson/EPSolar_Tracer/blob/master/images/arduino_Max485_wiring.jpg | width=300x400)
 
 You can monitor the serial port from the Arduino IDE or serialTest.py (serialTest.py is a simple alternative if you can't get the Tracer to communicate directly with the Raspberry Pi)
 
