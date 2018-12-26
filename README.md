@@ -36,7 +36,7 @@ RJ45 green => a
 * dmesg /dev/ | grep tty
 * sudo cat /proc/tty/driver/serial
 
-#### Troubleshootin
+#### Troubleshooting
 Set the port to the right permissions.
 Sudo chmod 777 /dev/PORTNAME
 
