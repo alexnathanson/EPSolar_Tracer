@@ -39,7 +39,7 @@ RJ45 green => a
 * sudo cat /proc/tty/driver/serial
 
 #### Troubleshooting
-If you're trying to use the EXAR driver set the port to the right permissions.
+If you're trying to use the EXAR driver set the port to the right permissions. <br>
 Sudo chmod 777 /dev/PORTNAME
 
 ### Via GPIO
