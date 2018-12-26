@@ -29,7 +29,16 @@ RJ45 green => a
 -->
 
 #### Misc. Linux port identification commands
+* Lsusb
+* dmesg
+* ls /dev/* | grep XRUSB
+* python -m serial.tools.list_ports
+* dmesg /dev/ | grep tty
+* sudo cat /proc/tty/driver/serial
 
+#### Troubleshootin
+Set the port to the right permissions.
+Sudo chmod 777 /dev/PORTNAME
 
 ### Via GPIO
 This method uses a Max485 and a 5v to 3.3v level shifter. I have not realized this version, but it should be doable if you need to free up USB port for whatever reason.
