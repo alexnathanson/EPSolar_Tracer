@@ -27,5 +27,7 @@ while True:
 	print("Charge Current: " + str(chargeCurrent))
 	print("Load Current" + str(loadCurrent))
 	print("Load Power: " + str(loadPower))
+	
+	sleep(5)
 
 client.close()
