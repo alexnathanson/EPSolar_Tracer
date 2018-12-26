@@ -5,7 +5,7 @@ This has been tested with model 3210A, but should work with any EP Solar Tracer 
 ## Raspberry Pi Mobel 3 B+
 
 ### Via USB port
-This uses a USB to RS485 cable. This does not work with the manufacturer's recommended cable (Model: CC-USB-RS485-150U) but I did get it to work easily with a ch340T chip model.
+This uses a USB to RS485 converter. This does not work with the manufacturer's recommended cable (Model: CC-USB-RS485-150U) but I did get it to work easily with a ch340T chip model.
 
 #### ch340T specs
 * https://hackaday.com/tag/ch340/
