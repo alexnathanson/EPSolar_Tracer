@@ -3,10 +3,9 @@ This repo has a few different implementations and tools for communicating with E
 This has been tested with model 3210A, but should work with any EP Solar Tracer model that uses Modbus RS485 and MT50 displays
 
 ## Raspberry Pi Mobel 3 B+
-I do not have a successful standalone Raspberry Pi 3 B+ version yet, but am continueing to work on it. There are a few examples of people who have realized this project in the past, but I haven't seen anyone specifically succeed with this specific Pi using Raspian Stretch... You can easily connected the Pi to an Arduino via a USB cable.
 
 ### Via USB port
-This uses a USB to RS485 cable.
+This uses a USB to RS485 cable. This does not work with the manufacturer's recommended cable (Model: CC-USB-RS485-150U) but I did get it to work easily with a ch340T chip model.
 <!--
 #### install steps
 * sudo apt-get install git
@@ -15,7 +14,14 @@ This uses a USB to RS485 cable.
 * pip install serial
 -->
 ### Via GPIO
-This method uses a Max485 and a 5v to 3.3v level shifter.
+This method uses a Max485 and a 5v to 3.3v level shifter. I have not realized this version, but it should be doable if you need to free up USB port for whatever reason.
+
+Some GPIO resources
+* https://learn.sparkfun.com/tutorials/txb0104-level-shifter-hookup-guide?_ga=2.223672476.663927220.1545672234-707983221.1543353897
+* https://spellfoundry.com/2016/05/29/configuring-gpio-serial-port-raspbian-jessie-including-pi-3/
+* https://www.instructables.com/id/How-to-Use-Modbus-With-Raspberry-Pi/
+* https://doc.homegear.eu/data/homegear-homematicwired/configuration.html#config-rs485-serial
+* https://www.raspberrypi-spy.co.uk/2018/09/using-a-level-shifter-with-the-raspberry-pi-gpio/
 
 ## Arduino Uno & Max485
 This works well. It's a pretty easy implementation. I'm using software serial to free up the USB port for serial communication with a computer or whatever you want. In the future I may build it out as a library.
