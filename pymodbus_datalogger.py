@@ -45,13 +45,14 @@ while True:
 
 	# check if the file already exists
  	try:
-		with open(fileName, mode='wb') as csvfile:
+		with open(fileName) as csvfile:
 			df = pd.read_csv(fileName)
-			df.append(newDF)
+			print(df)
+			df = df.append(newDF, ignore_index = True)
+			df.to_csv(fileName, sep=',',index=False)
 			print("It exists!")
 	except:
 		print("first file of the day!")
-
 		newDF.to_csv(fileName, sep=',',index=False)
 
 	sleep(20)
