@@ -8,7 +8,7 @@ import pandas as pd
 import csv
 import os
 
-fileName = 'data/tracerData'+str(datetime.date.today()+'.csv' 
+fileName = 'data/tracerData'+str(datetime.date.today())+'.csv' 
 
 client = ModbusClient(method = 'rtu', port = '/dev/ttyUSB0', baudrate = 115200)
 client.connect()
