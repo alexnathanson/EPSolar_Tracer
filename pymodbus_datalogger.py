@@ -6,9 +6,12 @@ import datetime
 import numpy as np
 import pandas as pd
 import csv
+import os
 
 client = ModbusClient(method = 'rtu', port = '/dev/ttyUSB0', baudrate = 115200)
 client.connect()
+
+fileName = 'data/tracerData'+str(datetime.date.today)+'.csv'
 
 while True:
 	result = client.read_input_registers(0x3100,16,unit=1)
@@ -19,18 +22,12 @@ while True:
 	chargeCurrent = float(result.registers[5] / 100.0)
 	loadCurrent= float(result.registers[9] / 100.0)
 	loadPower= float(result.registers[10] / 100.0)
- 
-	with open('data/tracerData'+datetime.date.today+'.csv') as csvfile:
-    	readCSV = csv.reader(csvfile, delimiter=',')
-	    for row in readCSV:
-			print(row)
-			print(row[0])
-	        print(row[0],row[1],row[2],)
+ 	
 	# Do something with the data
 
-	print("Solar Voltage: " + str(solarVoltage))
+	print("PV Voltage: " + str(solarVoltage))
 
-	print("Solar Current" + str(solarCurrent))
+	print("PV Current" + str(solarCurrent))
 
 	print("Battery Voltage: " + str(batteryVoltage))
 
@@ -42,7 +39,21 @@ while True:
 
 	s = pd.Series([solarVoltage, solarCurrent, batteryVoltage, chargeCurrent, loadCurrent, loadPower, currentDate])
 
-	print(s)
-	sleep(10)
+
+	# check if the file already exists
+ 	try:
+		with open(fileName, mode='w') as csvfile:
+	    	readCSV = csv.reader(csvfile, delimiter=',')
+			for row in readCSV:
+				print(row)
+				print(row[0])
+		        print(row[0],row[1],row[2],)
+	except:
+		print("first file of the day!")
+
+		df = pandas.DataFrame(data={"PV voltage": solarVoltage, "PV current": solarCurrent})
+		df.to_csv("./file.csv", sep=',',index=False)
+
+	sleep(20)
 
 client.close()
