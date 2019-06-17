@@ -1,4 +1,4 @@
-# based on the example from http://www.solarpoweredhome.co.uk/
+# pymodbus code based on the example from http://www.solarpoweredhome.co.uk/
 
 from pymodbus.client.sync import ModbusSerialClient as ModbusClient
 from time import sleep
@@ -8,10 +8,11 @@ import pandas as pd
 import csv
 import os
 
+fileName = 'data/tracerData'+str(datetime.date.today()+'.csv' 
+
 client = ModbusClient(method = 'rtu', port = '/dev/ttyUSB0', baudrate = 115200)
 client.connect()
 
-fileName = 'data/tracerData'+str(datetime.date.today)+'.csv'
 
 while True:
 	result = client.read_input_registers(0x3100,16,unit=1)
@@ -40,19 +41,18 @@ while True:
 	s = pd.Series([solarVoltage, solarCurrent, batteryVoltage, chargeCurrent, loadCurrent, loadPower, currentDate])
 
 
+	newDF = pd.DataFrame(data={"PV voltage": [solarVoltage], "PV current": [solarCurrent]})
+
 	# check if the file already exists
  	try:
-		with open(fileName, mode='w') as csvfile:
-	    	readCSV = csv.reader(csvfile, delimiter=',')
-			for row in readCSV:
-				print(row)
-				print(row[0])
-		        print(row[0],row[1],row[2],)
+		with open(fileName, mode='wb') as csvfile:
+			df = pd.read_csv(fileName)
+			df.append(newDF)
+			print("It exists!")
 	except:
 		print("first file of the day!")
 
-		df = pandas.DataFrame(data={"PV voltage": solarVoltage, "PV current": solarCurrent})
-		df.to_csv("./file.csv", sep=',',index=False)
+		newDF.to_csv(fileName, sep=',',index=False)
 
 	sleep(20)
 
