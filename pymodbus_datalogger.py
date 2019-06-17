@@ -3,6 +3,8 @@
 from pymodbus.client.sync import ModbusSerialClient as ModbusClient
 from time import sleep
 from datetime import datetime	
+import numpy as np
+import pandas as pd
 
 client = ModbusClient(method = 'rtu', port = '/dev/ttyUSB0', baudrate = 115200)
 client.connect()
@@ -28,7 +30,12 @@ while True:
 	print("Charge Current: " + str(chargeCurrent))
 	print("Load Current" + str(loadCurrent))
 	print("Load Power: " + str(loadPower))
-	print("Local time: " + str(datetime.time))
+	currentDate = datetime.now()
+	print("Local time: " + str(currentDate))
+
+	s = pd.Series([solarVoltage, solarCurrent, batteryVoltage, chargeCurrent, loadCurrent, loadPower, currentDate])
+
+	print(s)
 	sleep(5)
 
 client.close()
