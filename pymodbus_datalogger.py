@@ -5,6 +5,7 @@ from time import sleep
 from datetime import datetime	
 import numpy as np
 import pandas as pd
+import csv
 
 client = ModbusClient(method = 'rtu', port = '/dev/ttyUSB0', baudrate = 115200)
 client.connect()
@@ -19,6 +20,12 @@ while True:
 	loadCurrent= float(result.registers[9] / 100.0)
 	loadPower= float(result.registers[10] / 100.0)
  
+	with open('data/tracerData'+date.today+'.csv') as csvfile:
+    	readCSV = csv.reader(csvfile, delimiter=',')
+	    for row in readCSV:
+			print(row)
+			print(row[0])
+	        print(row[0],row[1],row[2],)
 	# Do something with the data
 
 	print("Solar Voltage: " + str(solarVoltage))
@@ -36,6 +43,6 @@ while True:
 	s = pd.Series([solarVoltage, solarCurrent, batteryVoltage, chargeCurrent, loadCurrent, loadPower, currentDate])
 
 	print(s)
-	sleep(5)
+	sleep(10)
 
 client.close()

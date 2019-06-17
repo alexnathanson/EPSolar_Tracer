@@ -29,6 +29,8 @@ RJ45 green => a
 * pip install pymodbus 
 * pip install serial
 * git clone  https://github.com/alexnathanson/EPSolar_Tracer.git
+* pip install numpy
+* pip install pandas
 
 
 #### Misc. Linux port identification commands
