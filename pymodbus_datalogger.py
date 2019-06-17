@@ -2,7 +2,7 @@
 
 from pymodbus.client.sync import ModbusSerialClient as ModbusClient
 from time import sleep
-from datetime import datetime	
+import datetime
 import numpy as np
 import pandas as pd
 import csv
@@ -20,7 +20,7 @@ while True:
 	loadCurrent= float(result.registers[9] / 100.0)
 	loadPower= float(result.registers[10] / 100.0)
  
-	with open('data/tracerData'+date.today+'.csv') as csvfile:
+	with open('data/tracerData'+datetime.date.today+'.csv') as csvfile:
     	readCSV = csv.reader(csvfile, delimiter=',')
 	    for row in readCSV:
 			print(row)
@@ -37,7 +37,7 @@ while True:
 	print("Charge Current: " + str(chargeCurrent))
 	print("Load Current" + str(loadCurrent))
 	print("Load Power: " + str(loadPower))
-	currentDate = datetime.now()
+	currentDate = datetime.datetime.now()
 	print("Local time: " + str(currentDate))
 
 	s = pd.Series([solarVoltage, solarCurrent, batteryVoltage, chargeCurrent, loadCurrent, loadPower, currentDate])
