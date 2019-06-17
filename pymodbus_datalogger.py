@@ -2,7 +2,7 @@
 
 from pymodbus.client.sync import ModbusSerialClient as ModbusClient
 from time import sleep
-import datetime
+from datetime import datetime	
 
 client = ModbusClient(method = 'rtu', port = '/dev/ttyUSB0', baudrate = 115200)
 client.connect()
