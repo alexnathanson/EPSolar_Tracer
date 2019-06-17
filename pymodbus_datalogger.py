@@ -38,10 +38,16 @@ while True:
 	currentDate = datetime.datetime.now()
 	print("Local time: " + str(currentDate))
 
-	s = pd.Series([solarVoltage, solarCurrent, batteryVoltage, chargeCurrent, loadCurrent, loadPower, currentDate])
+	#s = pd.Series([solarVoltage, solarCurrent, batteryVoltage, chargeCurrent, loadCurrent, loadPower, currentDate])
 
 
-	newDF = pd.DataFrame(data={"PV voltage": [solarVoltage], "PV current": [solarCurrent]})
+	newDF = pd.DataFrame(data={"PV voltage": [solarVoltage],
+		"PV current": [solarCurrent],
+		"battery voltage":[batteryVoltage],
+		"charge current":[chargeCurrent],
+		"load current": [loadCurrent],
+		"load power": [loadPower],
+		"time": [currentDate]})
 
 	# check if the file already exists
  	try:
@@ -55,6 +61,7 @@ while True:
 		print("first file of the day!")
 		newDF.to_csv(fileName, sep=',',index=False)
 
-	sleep(20)
+	#runs every minute
+	sleep(60)
 
 client.close()
