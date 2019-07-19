@@ -23,7 +23,11 @@ while True:
 	chargeCurrent = float(result.registers[5] / 100.0)
 	loadCurrent= float(result.registers[9] / 100.0)
 	loadPower= float(result.registers[10] / 100.0)
- 	
+ 	#batteryPercentage = float(result.registers[10] / 100.0) #311A Battery SOC
+ 	dateTimeNow = datetime.datetime.now()
+ 	currentTime = dateTimeNow.time()
+ 	currentDate = dateTimeNow.date()
+
 	# Do something with the data
 '''
 	print("PV Voltage: " + str(solarVoltage))
@@ -35,7 +39,7 @@ while True:
 	print("Charge Current: " + str(chargeCurrent))
 	print("Load Current" + str(loadCurrent))
 	print("Load Power: " + str(loadPower))
-	currentDate = datetime.datetime.now()
+	
 	print("Local time: " + str(currentDate))
 '''
 	#s = pd.Series([solarVoltage, solarCurrent, batteryVoltage, chargeCurrent, loadCurrent, loadPower, currentDate])
@@ -47,7 +51,8 @@ while True:
 		"charge current":[chargeCurrent],
 		"load current": [loadCurrent],
 		"load power": [loadPower],
-		"time": [currentDate]})
+		"time": [currentTime]},
+		"date" : [currentDate])
 
 	# check if the file already exists
  	try:
