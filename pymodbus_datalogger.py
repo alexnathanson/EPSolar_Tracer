@@ -29,7 +29,7 @@ while True:
  	currentDate = dateTimeNow.date()
 
 	# Do something with the data
-'''
+	'''
 	print("PV Voltage: " + str(solarVoltage))
 
 	print("PV Current" + str(solarCurrent))
@@ -41,7 +41,7 @@ while True:
 	print("Load Power: " + str(loadPower))
 	
 	print("Local time: " + str(currentDate))
-'''
+	'''
 	#s = pd.Series([solarVoltage, solarCurrent, batteryVoltage, chargeCurrent, loadCurrent, loadPower, currentDate])
 
 
@@ -51,8 +51,8 @@ while True:
 		"charge current":[chargeCurrent],
 		"load current": [loadCurrent],
 		"load power": [loadPower],
-		"time": [currentTime]},
-		"date" : [currentDate])
+		"time": [currentTime],
+		"date" : [currentDate]})
 
 	# check if the file already exists
  	try:
