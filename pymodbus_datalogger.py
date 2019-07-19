@@ -25,7 +25,7 @@ while True:
 	loadPower= float(result.registers[10] / 100.0)
  	
 	# Do something with the data
-
+'''
 	print("PV Voltage: " + str(solarVoltage))
 
 	print("PV Current" + str(solarCurrent))
@@ -37,7 +37,7 @@ while True:
 	print("Load Power: " + str(loadPower))
 	currentDate = datetime.datetime.now()
 	print("Local time: " + str(currentDate))
-
+'''
 	#s = pd.Series([solarVoltage, solarCurrent, batteryVoltage, chargeCurrent, loadCurrent, loadPower, currentDate])
 
 
@@ -56,7 +56,7 @@ while True:
 			print(df)
 			df = df.append(newDF, ignore_index = True)
 			df.to_csv(fileName, sep=',',index=False)
-			print("It exists!")
+			#print("It exists!")
 	except:
 		print("first file of the day!")
 		newDF.to_csv(fileName, sep=',',index=False)
