@@ -49,8 +49,8 @@ If you're trying to use the EXAR driver set the port to the right permissions.
 This lists a few simple solutions and some trouble shooting steps:
 * https://learn.sparkfun.com/tutorials/how-to-run-a-raspberry-pi-program-on-startup/all
 
-The issue I ran in to was that the modules my program needed to import were tied to the 'pi' user. To get around this I had to change the user in the rc.local file before running the script. (This solution came from https://raspberrypi.stackexchange.com/questions/78141/python-script-fails-with-importerror-when-run-from-rc-local)
-sudo -H -u pi python [my script]
+The issue I ran in to was that the modules my program needed to import were tied to the 'pi' user. To get around this I had to change the user in the rc.local file before running the script. (This solution came from https://raspberrypi.stackexchange.com/questions/78141/python-script-fails-with-importerror-when-run-from-rc-local) You might also need to mess with the file permissions to make the script executable and if you're piping your output to another file you may need to make that file writable.
+* sudo -H -u pi python [my script]
 
 ### Via GPIO
 This method uses a Max485 and a 5v to 3.3v level shifter. I have not realized this version, but it should be doable if you need to free up USB ports for whatever reason.
