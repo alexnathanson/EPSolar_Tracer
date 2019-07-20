@@ -8,13 +8,14 @@ import pandas as pd
 import csv
 import os
 
-fileName = '/home/pi/EPSolar_Tracer/data/tracerData'+str(datetime.date.today())+'.csv' 
-
 client = ModbusClient(method = 'rtu', port = '/dev/ttyUSB0', baudrate = 115200)
 client.connect()
 
 
 while True:
+
+	fileName = '/home/pi/EPSolar_Tracer/data/tracerData'+str(datetime.date.today())+'.csv' 
+
 	result = client.read_input_registers(0x3100,16,unit=1)
 
 	solarVoltage = float(result.registers[0] / 100.0)
