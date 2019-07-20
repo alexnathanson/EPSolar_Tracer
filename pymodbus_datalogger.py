@@ -19,8 +19,8 @@ while True:
 
 	solarVoltage = float(result.registers[0] / 100.0)
 	solarCurrent = float(result.registers[1] / 100.0)
-	solarPowerL = = float(result.registers[2] / 100.0)
-	solarPowerH = = float(result.registers[3] / 100.0)
+	solarPowerL = float(result.registers[2] / 100.0)
+	solarPowerH = float(result.registers[3] / 100.0)
 	batteryVoltage = float(result.registers[4] / 100.0)
 	chargeCurrent = float(result.registers[5] / 100.0)
 	chargePowerL = float(result.registers[6] / 100.0)
@@ -28,7 +28,10 @@ while True:
 	loadVoltage = float(result.registers[8] / 100.0)
 	loadCurrent= float(result.registers[9] / 100.0)
 	loadPower= float(result.registers[10] / 100.0)
- 	batteryPercentage = float(result.registers[15] / 100.0)
+
+	result = client.read_input_registers(0x311A,2,unit=1)
+ 	batteryPercentage = float(result.registers[0] / 100.0)
+
  	dateTimeNow = datetime.datetime.now()
  	currentTime = dateTimeNow.time()
  	currentDate = dateTimeNow.today()
