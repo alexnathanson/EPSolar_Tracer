@@ -26,7 +26,7 @@ while True:
  	#batteryPercentage = float(result.registers[10] / 100.0) #311A Battery SOC
  	dateTimeNow = datetime.datetime.now()
  	currentTime = dateTimeNow.time()
- 	currentDate = dateTimeNow.date()
+ 	currentDate = dateTimeNow.today()
 
 	# Do something with the data
 	'''
@@ -42,8 +42,6 @@ while True:
 	
 	print("Local time: " + str(currentDate))
 	'''
-	#s = pd.Series([solarVoltage, solarCurrent, batteryVoltage, chargeCurrent, loadCurrent, loadPower, currentDate])
-
 
 	newDF = pd.DataFrame(data={"PV voltage": [solarVoltage],
 		"PV current": [solarCurrent],
