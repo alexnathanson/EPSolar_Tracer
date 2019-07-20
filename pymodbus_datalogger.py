@@ -19,11 +19,16 @@ while True:
 
 	solarVoltage = float(result.registers[0] / 100.0)
 	solarCurrent = float(result.registers[1] / 100.0)
+	solarPowerL = = float(result.registers[2] / 100.0)
+	solarPowerH = = float(result.registers[3] / 100.0)
 	batteryVoltage = float(result.registers[4] / 100.0)
 	chargeCurrent = float(result.registers[5] / 100.0)
+	chargePowerL = float(result.registers[6] / 100.0)
+	chargePowerH = float(result.registers[7] / 100.0)
+	loadVoltage = float(result.registers[8] / 100.0)
 	loadCurrent= float(result.registers[9] / 100.0)
 	loadPower= float(result.registers[10] / 100.0)
- 	#batteryPercentage = float(result.registers[10] / 100.0) #311A Battery SOC
+ 	batteryPercentage = float(result.registers[15] / 100.0)
  	dateTimeNow = datetime.datetime.now()
  	currentTime = dateTimeNow.time()
  	currentDate = dateTimeNow.today()
@@ -43,12 +48,19 @@ while True:
 	print("Local time: " + str(currentDate))
 	'''
 
-	newDF = pd.DataFrame(data={"PV voltage": [solarVoltage],
+	newDF = pd.DataFrame(data={
+		"PV voltage": [solarVoltage],
 		"PV current": [solarCurrent],
+		"PV power L": [solarPowerL],
+		"PV power H": [solarPowerH],
 		"battery voltage":[batteryVoltage],
 		"charge current":[chargeCurrent],
+		"charge power L":[chargePowerL],
+		"charge power H": [chargePowerH],
+		"load voltage":[loadVoltage],
 		"load current": [loadCurrent],
 		"load power": [loadPower],
+		"battery percentage": [batteryPercentage],
 		"time": [currentTime],
 		"date" : [currentDate]})
 
