@@ -13,7 +13,7 @@ client.connect()
 
 
 while True:
-
+	#doesn't need to happen every time, just at midnight
 	fileName = '/home/pi/EPSolar_Tracer/data/tracerData'+str(datetime.date.today())+'.csv' 
 
 	result = client.read_input_registers(0x3100,16,unit=1)
@@ -35,7 +35,7 @@ while True:
 
  	dateTimeNow = datetime.datetime.now()
  	currentTime = dateTimeNow.time()
- 	currentDate = dateTimeNow.today()
+ 	currentDate = datetime.date.today() #updated but not pushed - check that it is correct and works
 
 	# Do something with the data
 	'''
